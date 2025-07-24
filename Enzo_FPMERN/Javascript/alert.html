@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Javascript</title>
+</head>
+
+<body>
+    <script>
+        let nilai = prompt("masukan nilai anda (misal : 90)");
+
+        // switch (nilai) {
+        //     case 0:
+        //         nilai >= 80 && nilai <= 100;
+        //         alert("Hello! I am an alert box!!");
+        //         break;
+        //     case 1:
+        //         nilai < 80 && nilai >= 60;
+        //         break;
+        //     case 2:
+        //         nilai < 60 && nilai >= 40;
+        //         break;
+        //     case 3:
+        //         nilai < 40 && nilai >= 20;
+        //         break;
+        //     default:
+        //         nilai < 20 && nilai >=0;
+        // }
+
+        // ternyata switch membandingkan secara === jadi operasi pembanding == tidak bisa
+        if (nilai >= 80 && nilai <= 100) {
+            alert("Nilai anda A");
+        } else if (nilai >= 60 && nilai < 80) {
+            alert("Nilai anda B");
+        } else if (nilai >= 40 && nilai < 60) {
+            alert("Nilai anda C");
+        } else if (nilai >= 20 && nilai < 40) {
+            alert("Nilai anda D");
+        } else if (nilai >= 0 && nilai < 20) {
+            alert("Nilai anda E");
+        } else {
+            alert("Input tidak valid.");
+        }
+    </script>
+</body>
+
+</html>
