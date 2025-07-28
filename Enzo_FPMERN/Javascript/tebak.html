@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Angka</title>
+</head>
+
+<body>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+// ===================================================================================
+
+            // variable simpan score
+            let p1 = 0;
+            let p2 = 0;
+
+            // variable simpan jawaban player
+            let p1Ans = null;
+            let p2Ans = null;
+
+            // variable simpan 1-3
+            const angka = [1,2,3]
+
+            // variable simpan stage
+            let stage = 1;
+
+// ===================================================================================
+
+            // fungsi sah tidak jawaban
+            const isOneToThree = x => [1,2,3].includes(Number(x));
+
+            // fungsi hitung jawaban player 1 dan player 2
+            const isEqualThree = (enzo, saskia) => (Number(enzo) + Number(saskia)) === 3;
+
+            // funsi penentu siapa dapat score
+            const isScored = (enzo, saskia) => enzo == 2 ? p1++ : (saskia == 2 ? p2++ : null);
+
+            // fungsi menentu menang
+            const menang = (p1, p2) =>
+                Number(p1) > Number(p2) ? 'Pemenangnya adalah Player 1!' :
+                Number(p1) < Number(p2) ? 'Pemenangnya adalah Player 2!' :
+                'Permainan Berakhir Seri';
+
+// ===================================================================================
+
+            // welcoming player
+            alert(`Selamat datang di permainan tebak angka by enzo!`);
+
+            // looping 5 kali, sebagai stage
+            while (stage <= 5) {
+                alert(`Stage ${stage}`);
+                p1Ans = prompt(`Player 1 silahkan masukan angka 1-3!`);
+                p2Ans = prompt(`Player 2 silahkan masukan angka 1-3!`);
+
+                if (isOneToThree(p1Ans) && isOneToThree(p2Ans)){
+                    if (isEqualThree(p1Ans,p2Ans)) {
+                        isScored(p1Ans,p2Ans);
+                        alert(`Score Player 1 = ${p1}\nScore Player 2 = ${p2}`);
+                    } else {
+                        alert(`Score Player 1 = ${p1}\nScore Player 2 = ${p2}`);
+                    }
+                    stage++;
+                } else {
+                    alert('Input salah, masukan angka 1-3!')
+                }
+            }
+
+            // menampilkan hasil permainan & main lagi
+            confirm(`${menang(p1, p2)}\n\nMau main lagi?`) && location.reload();
+
+        })
+
+    </script>
+</body>
+
+</html>
