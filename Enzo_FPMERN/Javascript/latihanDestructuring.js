@@ -77,9 +77,9 @@ const daftarMahasiswa = [
 // Destructuring
 
 // Pengaliasan dan set default value object Mahasiswa
-// const {nama, nim, jurusan:jur, angkatan:akt, kontak:{email:em}, alamat:{kos}, hobi, suami = "Enzokulin"} = Mahasiswa;
+const {nama, nim, jurusan:jur, angkatan:akt, kontak:{email:em}, alamat:{kos}, hobi, suami = "Enzokulin"} = Mahasiswa;
 
-// console.info(nama, nim, jur, akt, em, kos, hobi, suami);
+console.info(nama, nim, jur, akt, em, kos, hobi, suami);
 
 // Pengaliasan dan set default value object Barang E-commers
 const {id, nama:nami, harga:hrg, stok, kategori:kat, spesifikasi:spek, diskon:{persen}, vendor = "VMT"} = Produk
