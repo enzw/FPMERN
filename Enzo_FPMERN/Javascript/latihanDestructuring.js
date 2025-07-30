@@ -96,4 +96,9 @@ const {nama:nama2, nim:nim2, jurusan:jur2, angkatan:akt2, alamat:{kos:kos2}} = E
 console.info(nama1, nim1);
 console.info(nama2, nim2);
 
+// Destructuring Object of array to function
+const infoMhs = ({nama, nim, jurusan, angkatan, alamat:{kos}}) => console.info(nama, nim);
+
+infoMhs(Gwen);
+
 
