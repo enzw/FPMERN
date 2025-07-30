@@ -1,4 +1,8 @@
+// ======================================================
+
 // Destructuring Array
+
+// ======================================================
 
 const pacar = ["Saskia", "Putri", "Paramitha", "Aliyah", "Gwen"];
 
@@ -23,6 +27,8 @@ console.info(PacarSatu, PacarDua, PacarTiga, SisaPacar);
 // ======================================================
 
 // Destructuring Object
+
+// ======================================================
 
 const Istri = {
     Nama : "Saskia Putri",
@@ -51,7 +57,39 @@ const Istri = {
 // const {Nama, Hobby, Pendidikan, Alamat:{Rumah, Kos}} = Istri; (panggil langsung ke Spesifik misal Kos/Rumah)
 
 //      Sama seperti di array ... untuk ambil sisa value yang tidak disebut
-const {Nama, Hobby, ...infoLainya} = Istri;
-
+const {Nama, Hobby, ...infoLainya} = Istri; 
+// "Parameter" harus sama seperti atribut si objek misal Nama ya Nama, beda dengan array yang tergantung dengan index jadi bebas nama "parameternya"
 
 console.info(Nama, Hobby, infoLainya);
+
+
+// ======================================================
+
+// Destructuring Object ke Function
+
+// ======================================================
+
+// "Parameter" -nya dipakein Kurung kurawal karena mengacu ke objek, supaya bisa akses atribut berupa objek didalam objek
+const cekIstri = ({Nama, Hobby, Alamat}) => console.info(Nama, Hobby, Alamat);
+
+// Dalam bentuk function biasa
+function infoIstri({Nama, Hobby, Alamat:{Rumah, Kos}}) {
+    console.info(Nama, Hobby, Rumah, Kos)
+}
+
+cekIstri(Istri)
+infoIstri(Istri)
+
+
+// ======================================================
+
+// Default Value
+// (atribut = "default-value") menambahkan value ke atribut jika atribut tidak ada di dalam objek, jika ada atribut tersebut maka yang dipakai yang ori dari objek
+// Alias
+// (atribut:alias) mengaliaskan nama atribut ke alias tertentu, misal Nama:n maka cukup panggil n didalam function
+
+function defValueAlias({Nama:name, Hobby, Alamat:{Rumah, Kos}, Suami = "Enzo"}) {
+    console.info(name, Hobby, Rumah, Kos, Suami)
+}
+
+defValueAlias(Istri);
