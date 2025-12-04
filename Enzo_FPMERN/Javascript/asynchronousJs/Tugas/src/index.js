@@ -1,24 +1,14 @@
 import { card } from "./generateCard.js";
 import { loadNews } from "./newsAPI.js";
-import { buildURL } from "./newsAPI.js";
 
 const container = document.getElementById("container");
 const bar = document.getElementById("search");
 const button = document.getElementById("button");
 
-container.innerHTML = "Loading..."
-button.addEventListener('click', () => {
-    const keyword = bar.value.trim();
-    if (keyword !== "") {
-        buildURL(keyword);
-        renderNews();
-    }
-})
-
-const renderNews = async () => {
+const renderNews = async (keyword = "") => {
     container.innerHTML = `<p class="text-white text-center">Loading...</p>`;
 
-    const news = await loadNews();
+    const news = await loadNews(keyword);
 
     container.innerHTML = "";
 
@@ -27,10 +17,15 @@ const renderNews = async () => {
             item.image_url,
             item.title,
             item.description,
-            item.category[0],
+            item.category?.[0] ?? "",
             item.link
         );
     });
 }
 
-renderNews();
+renderNews("");
+
+button.addEventListener('click', () => {
+    const keyword = bar.value.trim();
+    renderNews(keyword);
+});
