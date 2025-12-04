@@ -1,0 +1,14 @@
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* maksimal 4 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-truncate-line {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* maksimal 4 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
