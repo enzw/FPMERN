@@ -1,7 +1,7 @@
 import React from "react";
 import { ClassComponent } from "./Pembahasan/ClassComponent.jsx";
 
-class Komponen extends React.Component{
+export default class Komponen extends React.Component{
 
     render(){
         return(

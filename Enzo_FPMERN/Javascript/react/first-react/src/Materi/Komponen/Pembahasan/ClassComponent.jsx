@@ -7,7 +7,7 @@ class ClassComponent extends React.Component {
         return(
             <div>
                 <h1>Hello world</h1>
-                <h2>Komponen ini dibuat menggunakan ClassComponent</h2>
+                <h2>Komponen ini dibuat menggunakan Class Component</h2>
             </div>
         )
     }
