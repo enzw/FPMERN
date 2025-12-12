@@ -10,10 +10,12 @@ export default class Komponen extends React.Component{ // class ini di export un
     render(){
         return(
             <div>
-                <ClassComponent nama="Enzo Tampan" />
-                <FunctionalComponent/>
+                <ClassComponent nama={true}/>
+                <FunctionalComponent />
             </div>
         )
     }
 }
+
+// nambahin props seperti di classcomponent di atas, bisa ditangkep di file classcomponent.jsx dengan {this.props.namanya_apa}
 
