@@ -1,0 +1,28 @@
+$primary : aqua;
+$secondary : aquamarine;
+$danger : firebrick;
+
+
+.btn {
+    border-radius: 32px;
+    border: 0px none;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-info {
+    background-color: $primary;
+
+    &:hover{
+        background-color: $secondary;
+    }
+}
+
+.btn-danger {
+    background-color: $danger;
+
+    &:hover{
+        background-color: rgb(196, 47, 47);
+    }
+}
